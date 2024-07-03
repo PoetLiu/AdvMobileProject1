@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -57,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:minHeight="260dp"
-                android:src="@drawable/default_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -90,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:alpha="1"
-                android:text="Apple CarPlay & Android Auto"
+                android:text="Apple CarPlay &amp; Android Auto"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/carMileageTextView" />
@@ -190,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Experience the perfect blend of iconic style, powerful performance, and modern innovation with the 2016 Ford Mustang V6 Coupe. This legendary American muscle car is designed to turn heads and ignite your passion for the road. Under the hood, the robust 3.7-liter V6 engine delivers a thrilling 300 horsepower, providing an exhilarating driving experience whether you're cruising down the highway or carving through winding roads."
+                android:text="@string/carDetailExample"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
