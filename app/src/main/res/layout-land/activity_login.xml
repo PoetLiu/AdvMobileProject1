@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/login_heading"
+        android:id="@+id/heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Login"

@@ -10,6 +10,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.text.NumberFormat
+import java.util.Locale
 
 class CarAdapter(options: FirebaseRecyclerOptions<Car>) :
     FirebaseRecyclerAdapter<Car, CarAdapter.MyViewHolder>(options) {
@@ -28,7 +30,13 @@ class CarAdapter(options: FirebaseRecyclerOptions<Car>) :
         holder.carTitleText.text = model.title
         holder.carMileageText.text = model.mileage
         holder.carHighlightsText.text = model.highlights
-        holder.carPriceText.text = model.price.toString()
+        holder.carPriceText.text = priceToCurrency(model.price)
+    }
+
+    private fun priceToCurrency(price: Double): String {
+        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "CA"))
+        format.maximumFractionDigits = 0
+        return format.format(price)
     }
 
     inner class MyViewHolder(inflater: LayoutInflater, parent: ViewGroup) :

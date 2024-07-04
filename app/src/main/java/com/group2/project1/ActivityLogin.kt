@@ -1,5 +1,6 @@
 package com.group2.project1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -55,6 +56,8 @@ class ActivityLogin : AppCompatActivity() {
                     val user = auth.currentUser
                     Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     // Redirect to another activity or perform other actions
+                    val intent = Intent(this, CarListActivity::class.java)
+                    startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(
