@@ -1,6 +1,8 @@
 package com.group2.project1.controller
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.group2.project1.R
+import com.group2.project1.model.Car
 
 class CarDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,13 +34,21 @@ class CarDetailActivity : AppCompatActivity() {
         )
         Glide.with(carImage.context).load(storageRef).into(carImage)
 
-        carTitleText.text = intent.getStringExtra("title")
-        carMileageText.text = intent.getStringExtra("mileage")
-        carHighlightsText.text = intent.getStringExtra("highlights")
-        carPriceText.text = intent.getStringExtra("price")
-        carColorText.text = intent.getStringExtra("color")
-        carEngineText.text = intent.getStringExtra("engine")
-        carFuelText.text = intent.getStringExtra("fuel")
-        carDetailsText.text = intent.getStringExtra("details")
+        val car = Car(intent)
+        carTitleText.text = car.title
+        carMileageText.text = car.mileage
+        carHighlightsText.text = car.highlights
+        carPriceText.text = car.getPriceCurrency()
+        carColorText.text = car.color
+        carEngineText.text = car.engine
+        carFuelText.text = car.fuel
+        carDetailsText.text = car.details
+
+        val buyNowBtn: Button = findViewById(R.id.buyBtn)
+        buyNowBtn.setOnClickListener {
+            val myIntent: Intent = Intent(this, CheckoutActivity::class.java)
+            car.putIntoIntent(myIntent)
+            startActivity(myIntent)
+        }
     }
 }
