@@ -1,5 +1,6 @@
 package com.group2.project1
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,8 +11,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.text.NumberFormat
-import java.util.Locale
 
 class CarAdapter(options: FirebaseRecyclerOptions<Car>) :
     FirebaseRecyclerAdapter<Car, CarAdapter.MyViewHolder>(options) {
@@ -30,13 +29,14 @@ class CarAdapter(options: FirebaseRecyclerOptions<Car>) :
         holder.carTitleText.text = model.title
         holder.carMileageText.text = model.mileage
         holder.carHighlightsText.text = model.highlights
-        holder.carPriceText.text = priceToCurrency(model.price)
-    }
+        holder.carPriceText.text = model.getPriceCurrency()
 
-    private fun priceToCurrency(price: Double): String {
-        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "CA"))
-        format.maximumFractionDigits = 0
-        return format.format(price)
+        val view = holder.itemView
+        view.setOnClickListener {
+            val myIntent: Intent = Intent(view.context, CarDetailActivity::class.java)
+            model.putIntoIntent(myIntent)
+            view.context.startActivity(myIntent)
+        }
     }
 
     inner class MyViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
