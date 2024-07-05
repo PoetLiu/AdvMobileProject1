@@ -1,4 +1,4 @@
-package com.group2.project1
+package com.group2.project1.model
 import android.content.Intent
 import java.text.NumberFormat
 import java.util.Locale

@@ -1,4 +1,4 @@
-package com.group2.project1
+package com.group2.project1.controller
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.group2.project1.R
 
 class CarDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
