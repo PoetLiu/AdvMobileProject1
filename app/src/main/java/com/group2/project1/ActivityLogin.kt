@@ -52,14 +52,11 @@ class ActivityLogin : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                    // Redirect to another activity or perform other actions
                     val intent = Intent(this, CarListActivity::class.java)
                     startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
                     Toast.makeText(
                         this,
                         "Authentication failed: ${task.exception?.message}",
