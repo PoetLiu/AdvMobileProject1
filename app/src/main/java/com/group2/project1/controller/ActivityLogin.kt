@@ -1,4 +1,4 @@
-package com.group2.project1
+package com.group2.project1.controller
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-
+import com.group2.project1.R
 
 class ActivityLogin : AppCompatActivity() {
 

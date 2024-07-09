@@ -1,4 +1,4 @@
-package com.group2.project1
+package com.group2.project1.controller
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -11,6 +11,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.group2.project1.R
+import com.group2.project1.model.Car
 
 class CarAdapter(options: FirebaseRecyclerOptions<Car>) :
     FirebaseRecyclerAdapter<Car, CarAdapter.MyViewHolder>(options) {

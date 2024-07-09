@@ -1,11 +1,10 @@
-package com.group2.project1
+package com.group2.project1.controller
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.group2.project1.R
-import com.group2.project1.ActivityLogin
 
 class MainActivity : AppCompatActivity() {
 

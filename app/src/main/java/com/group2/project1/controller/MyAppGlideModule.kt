@@ -1,4 +1,4 @@
-package com.group2.project1
+package com.group2.project1.controller
 
 import android.content.Context
 import com.bumptech.glide.module.AppGlideModule
