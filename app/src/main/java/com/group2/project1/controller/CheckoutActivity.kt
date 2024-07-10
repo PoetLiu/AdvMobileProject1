@@ -192,7 +192,7 @@ class CheckoutActivity : AppCompatActivity() {
         builder.setMessage(summary)
         builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, _ ->
             dialog.dismiss()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, CarListActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
